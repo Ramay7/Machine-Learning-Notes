@@ -1,9 +1,1 @@
-### 标题1
-
-- $x = y$
-- 内容1
-
-$\frac{1}{2}$
-
-### 标题2
-内容2
+To make sure this Github website page can show Markdown with MathJax, you may intsall [GitHub with MathJax](https://chrome.google.com/webstore/detail/github-with-mathjax/ioemnmodlmafdkllaclgeombjnmnbima/related) in your Chrome.
