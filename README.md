@@ -1,1 +1,2 @@
-To make sure this Github website page can show Markdown with MathJax, you may intsall [GitHub with MathJax](https://chrome.google.com/webstore/detail/github-with-mathjax/ioemnmodlmafdkllaclgeombjnmnbima/related) in your Chrome.
+### Preface
+To render Github equations with MathJax, you may intsall [GitHub with MathJax](https://chrome.google.com/webstore/detail/github-with-mathjax/ioemnmodlmafdkllaclgeombjnmnbima/related) Extension in your Chrome Browser. :)
