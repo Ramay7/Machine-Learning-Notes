@@ -1,0 +1,5 @@
+\contentsline {section}{\numberline {1}Hypothesis}{1}{section.1}
+\contentsline {section}{\numberline {2}SVM Decision Boundary}{2}{section.2}
+\contentsline {section}{\numberline {3}Kernels and Similarity}{2}{section.3}
+\contentsline {section}{\numberline {4}SVM Parameters}{2}{section.4}
+\contentsline {section}{\numberline {5}Logistic Regression vs SVMs}{2}{section.5}
