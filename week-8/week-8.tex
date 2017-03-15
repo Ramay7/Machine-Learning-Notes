@@ -1,0 +1,102 @@
+\documentclass[11pt]{article}
+\usepackage[BoldFont,SlantFont,CJKchecksingle]{xeCJK}
+\usepackage[top=0.5in,bottom=0.5in,left=1.25in,right=0.8in]{geometry}
+\setCJKmainfont[BoldFont=SimHei]{SimSun}
+\setCJKmonofont{SimSun}% 设置缺省中文字体
+\parindent 0em   %段首缩进
+%\usepackage{indentfirst}	%设置第一段也首行缩进
+\linespread{1}	%设置行距
+\addtolength{\parskip}{.4em}	%增加段间距0.4em
+\usepackage{amsmath} % 插入数学公式
+\usepackage[colorlinks,linkcolor=blue]{hyperref} 	%设置超链接
+
+% 设置页眉页脚
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{} 
+\chead{} 
+\rhead{\bfseries {ramayzhu0625@gmail.com}} 
+\lfoot{} 
+\cfoot{}
+\rfoot{\thepage} 
+\renewcommand{\headrulewidth}{0.4pt} 
+\renewcommand{\footrulewidth}{0.4pt}
+
+% \includegraphics[width = .8\textwidth]{pic.png}  图片的宽度会被缩放至页面宽度的百分之八十，图片的总高度会按比例缩放 
+
+\begin{document}
+	\title{Machine Learning Week-5}
+	\author{ramay7}
+	
+	\maketitle % 显示标题
+	\tableofcontents % 生成目录
+	%\newpage
+	
+	\section{K-means Algorithm}
+		Randomly initialize K cluster centroid $\mu_1, \mu_2\cdots, \mu_k \in R^{n}$.
+		
+		Repeate \{ \\
+		.\qquad	for i = 1 to m\\
+		.\qquad \qquad $C^{(i)}$ := index(from 1 to K) of cluster centroid closest to $X^{(i)}$ \\
+		.\qquad for k = 1 to K\\
+		.\qquad \qquad $\mu_k$ := average (mean) of points assiagned to cluster k\\
+		\} \\
+	\section{Principal Component Analysis Algorithm}
+		PCA is not linear regression.
+		\subsection{Data Preprocessing}
+			Training set: $X^{(1)}， X^{(2)}, \cdots, X^{(m)}$ \\
+			Prerocessing (feature scaling/mean normalization):\\
+			.\qquad $\mu_j = \frac{1}{m}\sum_{i=1}^{m}X_{j}^{(i)}$ \\
+			.\qquad Replace each $X_{j}^{(i)}$ with $X_j - \mu_j$ \\
+			.\qquad If different features on different scales (e.g. $X_1$ = size of house, $X_2$ = number of bedrooms), scale features to have comparable range of values.
+		\subsection{Reduce data from n-dimensions to K-dimensions}
+			Compute "covariance matrix":\\
+			.\qquad Sigma = $\frac{1}{m}\sum_{i=1}^{n}(x^{(i)})(x^{(i)})^{T}$\\
+			Compute "eigenvectors" of matrix Sigma:
+			.\qquad [U, S, V] = svd(Sigma)\\
+			where svd is the abbreviation of singular value decomposition.\\
+			.\qquad $ U_{reduce} = U(:, 1:K) $;
+		\subsection{Reconstruction from compressed representation}
+			.\qquad $X_{approx}^{(i)} = U_{reduce}Z^{(i)}$ \\
+			where $U_{reduce}$ is a n by k matrix and $Z^{(i)}$ is a k by 1 matrix.
+	\section{Choosing K(number of principal conponents)}
+		Average squared projection error:
+		$$
+		\frac{1}{m}\sum_{i=1}^{m}|| x^{(i)} - x^{(i)}_{approx}|| ^ 2
+		$$
+		Total variation in the data:
+		$$
+		\frac{1}{m}\sum_{i=1}^{m}|| x^{(i)} || ^ 2
+		$$
+		Typically, choose k to be smallest value so that:
+		$$
+		A = \frac{\frac{1}{m}\sum_{i=1}^{m}|| x^{(i)} - x^{(i)}_{approx} ||^2}{\frac{1}{m}\sum_{i=1}^{m}|| x^{(i)} ||^ 2} \leq 0.01
+		$$
+		which indicates 99\% of variance is retained". \\
+		
+		For $[U, S, V] = svd(Sigma)$:
+		$$
+		\begin{aligned}
+		S = 
+		\left[
+		\begin{matrix}
+			S_{11} & 0 & 0 & ... & 0\\
+			0 & S_{22} & 0 & ... & 0\\
+			0 & 0 & S_{33} & ... & 0\\
+			. & . & . & ... & 0 \\
+			0 & 0 & 0 & ... & S_{nn}  
+		\end{matrix}
+		\right] \\
+		\end{aligned}
+		$$
+		For given k:
+		$$
+		A = 1 - \frac{\sum_{i=1}^{k}S_{ii}}{\sum_{i=1}^{n}S_{ii}}
+		$$
+	\section{Application of PCA}
+	\begin{itemize}
+		\item To compress the data so it takes up less computer memory/disk space
+		\item To reduce the dimension of the input data so as to speed up a learning algorithm
+		\item To visualize high-dimensional data (by choosing k = 2 or k = 3)
+	\end{itemize}
+\end{document}
