@@ -1,0 +1,7 @@
+\BOOKMARK [1][-]{section.1}{K-means\040Algorithm}{}% 1
+\BOOKMARK [1][-]{section.2}{Principal\040Component\040Analysis\040Algorithm}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Data\040Preprocessing}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Reduce\040data\040from\040n-dimensions\040to\040K-dimensions}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{Reconstruction\040from\040compressed\040representation}{section.2}% 5
+\BOOKMARK [1][-]{section.3}{Choosing\040K\(number\040of\040principal\040conponents\)}{}% 6
+\BOOKMARK [1][-]{section.4}{Application\040of\040PCA}{}% 7
