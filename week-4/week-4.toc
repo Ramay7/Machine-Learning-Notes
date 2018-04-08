@@ -1,4 +1,0 @@
-\contentsline {section}{\numberline {1}Neural Network}{1}{section.1}
-\contentsline {section}{\numberline {2}Equation}{1}{section.2}
-\contentsline {section}{\numberline {3}Simple Neural Network Application: XNOR}{2}{section.3}
-\contentsline {section}{\numberline {4}The End}{2}{section.4}

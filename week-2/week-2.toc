@@ -1,3 +1,0 @@
-\contentsline {section}{\numberline {1}Multivariate Linera Regression}{1}{section.1}
-\contentsline {section}{\numberline {2}Computing Parameters Analytically(Normal Equation)}{2}{section.2}
-\contentsline {section}{\numberline {3}The End}{2}{section.3}
